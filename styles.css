@@ -371,33 +371,45 @@ img.is-loaded {
 }
 
 .program-copy .program-subtitle {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.45rem;
   font-size: clamp(1.28rem, 2.1vw, 1.85rem);
   font-weight: 700;
+  line-height: 1.45;
 }
 
 .program-copy .program-highlight-black {
   margin: 0 0 1.05rem;
-  color: #111111;
   font-size: clamp(1.2rem, 2vw, 1.72rem);
   font-weight: 700;
-  line-height: 1.34;
+  line-height: 1.45;
 }
 
 .program-copy .program-section-title {
   margin: 1.1rem 0 0.55rem;
-  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-  line-height: 1.3;
+  font-size: clamp(1.2rem, 2vw, 1.72rem);
   font-weight: 700;
-  color: #111111;
+  line-height: 1.45;
 }
 
 .program-copy .program-subsection-title {
   margin: 0.95rem 0 0.45rem;
-  font-size: clamp(1.12rem, 1.55vw, 1.35rem);
-  line-height: 1.3;
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
   font-weight: 700;
+  line-height: 1.45;
+}
+
+.program-copy .program-shade {
+  display: inline;
+  padding: 0.28em 0.38em;
   color: #111111;
+  background: #ffffff;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.program-copy .program-shade--invert {
+  color: #ffffff;
+  background: #111111;
 }
 
 .program-copy ul {
@@ -493,6 +505,33 @@ img.is-loaded {
 
 .vivid-5 {
   background: var(--secondary);
+  color: #111111;
+}
+
+.vivid-6 {
+  background: #6d5cff;
+  color: #111111;
+}
+
+.vivid-6 summary {
+  color: #111111;
+}
+
+.vivid-7 {
+  background: #fb923c;
+  color: #111111;
+}
+
+.vivid-7 summary {
+  color: #111111;
+}
+
+.vivid-8 {
+  background: #14b8a6;
+  color: #111111;
+}
+
+.vivid-8 summary {
   color: #111111;
 }
 

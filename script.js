@@ -15,8 +15,6 @@ window.addEventListener("load", updateHeroNavBlend);
 
 const accordionGroups = document.querySelectorAll(".accordion-grid");
 
-// Team images are intentionally disabled in the current visual direction.
-// Remove them from the DOM to avoid unnecessary network requests.
 document.querySelectorAll(".team-card img").forEach((img) => img.remove());
 
 accordionGroups.forEach((group) => {
