@@ -41,9 +41,13 @@ img.is-loaded {
 
 .hero {
   min-height: 100vh;
-  background:
+  background-color: var(--bg);
+  background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.2)),
-    url("img/hero.webp") center / cover no-repeat;
+    url("img/hero.webp");
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
   color: #ffffff;
   padding: 92px 24px 26px;
   display: flex;
@@ -62,7 +66,7 @@ img.is-loaded {
   right: 0;
   z-index: 30;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   align-items: center;
   padding: 0.96rem 0.95rem;
   gap: 0.4rem;
@@ -88,6 +92,10 @@ img.is-loaded {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.top-nav-label-mobile {
+  display: none;
 }
 
 .top-nav.top-nav--hero-blend a {
@@ -150,11 +158,11 @@ img.is-loaded {
 }
 
 .bio-image-wrap img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 0;
   border: none;
-  object-fit: cover;
-  min-height: 340px;
 }
 
 .bio-text p {
@@ -579,6 +587,12 @@ img.is-loaded {
 }
 
 @media (max-width: 900px) {
+  .footer ul {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    align-items: stretch;
+  }
+
   .bio {
     grid-template-columns: 1fr;
   }
@@ -586,6 +600,14 @@ img.is-loaded {
   .bio-image-wrap {
     position: static;
     top: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bio-image-wrap img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .two-columns {
@@ -606,16 +628,54 @@ img.is-loaded {
   }
 
   .hero {
-    min-height: auto;
-    height: 75vw;
-    max-height: 100vh;
-    padding: 74px 14px 20px;
-    background-position: center top;
+    width: 100%;
+    min-height: calc((100vw * 9) / 16);
+    height: auto;
+    max-height: none;
+    padding: 72px min(24px, 4vw) clamp(3rem, 12vw, 6rem);
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.2)),
+      url("img/hero.webp");
+    background-size:
+      100% 100%,
+      100% auto;
+    background-position:
+      center top,
+      center top;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hero-logo {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    max-width: min(1180px, 100%);
+    height: auto;
   }
 
   .top-nav {
     padding: 0.8rem 0.45rem;
     gap: 0.18rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .top-nav-link--desktop-only {
+    display: none;
+  }
+
+  .top-nav-label-desktop {
+    display: none;
+  }
+
+  .top-nav-label-mobile {
+    display: inline;
   }
 
   .top-nav a {
@@ -623,8 +683,30 @@ img.is-loaded {
     letter-spacing: 0.02em;
   }
 
-  .hero-logo img {
-    width: min(100%, 92vw);
+  .one-column .card-accordion summary {
+    padding: 14px 16px;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+  }
+
+  .one-column .accordion-content.program-copy {
+    padding: 8px 20px 20px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-downloads {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-download-casellari {
+    grid-column: 2;
+    justify-self: end;
   }
 }
 
