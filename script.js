@@ -56,9 +56,15 @@ const revealTargets = document.querySelectorAll(
   ".section, .card-accordion, .video-card, .footer"
 );
 
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
 revealTargets.forEach((el) => el.classList.add("reveal-on-scroll"));
 
-if ("IntersectionObserver" in window) {
+if (prefersReducedMotion) {
+  revealTargets.forEach((el) => el.classList.add("is-visible"));
+} else if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
