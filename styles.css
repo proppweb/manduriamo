@@ -20,7 +20,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Univers LT Std", "Inter", "Arial Narrow", "Helvetica Neue", sans-serif;
+  font-family:
+    "Univers LT Std", "Inter", "Arial Narrow", "Helvetica Neue", sans-serif;
   color: var(--text);
   background: var(--bg);
   letter-spacing: -0.01em;
@@ -30,7 +31,10 @@ img {
   opacity: 0;
   filter: blur(8px);
   transform: scale(1.015);
-  transition: opacity 520ms ease, filter 520ms ease, transform 520ms ease;
+  transition:
+    opacity 520ms ease,
+    filter 520ms ease,
+    transform 520ms ease;
 }
 
 img.is-loaded {
@@ -259,7 +263,9 @@ img.is-loaded {
   border-radius: 0;
   border: none;
   overflow: hidden;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .card-accordion:hover {
@@ -287,7 +293,9 @@ img.is-loaded {
   line-height: 1;
   font-weight: 600;
   opacity: 0.8;
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
 }
 
 .card-accordion[open] summary::after {
@@ -345,7 +353,9 @@ img.is-loaded {
 .accordion-content > * {
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 260ms ease, transform 260ms ease;
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease;
 }
 
 .card-accordion[open] .accordion-content > * {
@@ -589,7 +599,9 @@ img.is-loaded {
 
 .video-card {
   background: transparent;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .video-title {
@@ -663,7 +675,9 @@ img.is-loaded {
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 520ms ease, transform 520ms ease;
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
 }
 
 .reveal-on-scroll.is-visible {

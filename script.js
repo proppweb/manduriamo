@@ -4,7 +4,10 @@ const topNav = document.querySelector(".top-nav");
 function updateHeroNavBlend() {
   if (!hero || !topNav) return;
   const heroBottomDoc = window.scrollY + hero.getBoundingClientRect().bottom;
-  topNav.classList.toggle("top-nav--hero-blend", window.scrollY < heroBottomDoc);
+  topNav.classList.toggle(
+    "top-nav--hero-blend",
+    window.scrollY < heroBottomDoc,
+  );
 }
 
 updateHeroNavBlend();
@@ -51,11 +54,11 @@ allImages.forEach((img) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  ".section, .card-accordion, .video-card, .footer"
+  ".section, .card-accordion, .video-card, .footer",
 );
 
 const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
+  "(prefers-reduced-motion: reduce)",
 ).matches;
 
 revealTargets.forEach((el) => el.classList.add("reveal-on-scroll"));
@@ -71,7 +74,7 @@ if (prefersReducedMotion) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.12 },
   );
 
   revealTargets.forEach((el) => revealObserver.observe(el));
